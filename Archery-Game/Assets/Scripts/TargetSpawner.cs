@@ -52,7 +52,6 @@ public class TargetSpawner : MonoBehaviour
 
                 Instantiate(targetPrefab, new Vector3(xRandom, yRandom, zRandom), targetPrefab.transform.rotation);
                 totalTargets++;
-                Debug.Log(totalTargets);
             }
         }
     }
