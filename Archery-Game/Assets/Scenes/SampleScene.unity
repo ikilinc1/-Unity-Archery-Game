@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb532d69e5ce1e44a34b24501412c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnArea: {x: 3.08, y: 3, z: 5.7}
+  spawnArea: {x: 3, y: 2.4, z: 4.5}
   targetsToSpawn: 3
   targetPrefab: {fileID: 1628356709344694, guid: 46f130b83002e7242b60ebe72480b0d9, type: 3}
 --- !u!4 &951791042

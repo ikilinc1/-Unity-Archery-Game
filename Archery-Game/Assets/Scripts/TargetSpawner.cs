@@ -33,22 +33,27 @@ public class TargetSpawner : MonoBehaviour
 
     void SpawnTargets()
     {
-        float xMin = transform.position.x - spawnArea.x / 2;
-        float yMin = transform.position.y - spawnArea.y / 2;
-        float zMin = transform.position.z - spawnArea.z / 2;
         
-        float xMax = transform.position.x + spawnArea.x / 2;
-        float yMax = transform.position.y + spawnArea.y / 2;
-        float zMax = transform.position.z + spawnArea.z / 2;
-
-        for (int i = 0; i < targetsToSpawn; i++)
+        if (totalTargets == 0)
         {
-            float xRandom = UnityEngine.Random.Range(xMin, xMax);
-            float yRandom = UnityEngine.Random.Range(yMin, yMax);
-            float zRandom = UnityEngine.Random.Range(zMin, zMax);
+            float xMin = transform.position.x - spawnArea.x / 2;
+            float yMin = transform.position.y - spawnArea.y / 2;
+            float zMin = transform.position.z - spawnArea.z / 2;
+        
+            float xMax = transform.position.x + spawnArea.x / 2;
+            float yMax = transform.position.y + spawnArea.y / 2;
+            float zMax = transform.position.z + spawnArea.z / 2;
 
-            Instantiate(targetPrefab, new Vector3(xRandom, yRandom, zRandom), targetPrefab.transform.rotation);
-            totalTargets++;
+            for (int i = 0; i < targetsToSpawn; i++)
+            {
+                float xRandom = UnityEngine.Random.Range(xMin, xMax);
+                float yRandom = UnityEngine.Random.Range(yMin, yMax);
+                float zRandom = UnityEngine.Random.Range(zMin, zMax);
+
+                Instantiate(targetPrefab, new Vector3(xRandom, yRandom, zRandom), targetPrefab.transform.rotation);
+                totalTargets++;
+                Debug.Log(totalTargets);
+            }
         }
     }
 
