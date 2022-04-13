@@ -28,19 +28,26 @@ public class ShootArrows : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (GameManager.gameStarted)
         {
-            DrawBow();
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                DrawBow();
+            }
 
-        if (Input.GetMouseButton(0))
-        {
-            PowerUpBow();
-        }
+            if (Input.GetMouseButton(0))
+            {
+                PowerUpBow();
+            }
 
-        if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0))
+            {
+                ReleaseBow();
+            }
+        }
+        else if (!GameManager.gameStarted)
         {
-            ReleaseBow();
+            bowAnimator.SetBool("drawing", false);
         }
     }
 

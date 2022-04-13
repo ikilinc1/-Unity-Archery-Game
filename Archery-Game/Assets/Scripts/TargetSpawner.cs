@@ -25,16 +25,21 @@ public class TargetSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (totalTargets == 0)
+        if (totalTargets == 0 && GameManager.gameStarted)
         {
             SpawnTargets();
+        }
+
+        if (!GameManager.gameStarted && totalTargets > 0)
+        {
+            DestroyTragets();
         }
     }
 
     void SpawnTargets()
     {
         
-        if (totalTargets == 0)
+        if (totalTargets == 0 && GameManager.gameStarted)
         {
             float xMin = transform.position.x - spawnArea.x / 2;
             float yMin = transform.position.y - spawnArea.y / 2;
@@ -53,6 +58,22 @@ public class TargetSpawner : MonoBehaviour
                 Instantiate(targetPrefab, new Vector3(xRandom, yRandom, zRandom), targetPrefab.transform.rotation);
                 totalTargets++;
             }
+        }
+    }
+
+    void DestroyTragets()
+    {
+        totalTargets = 0;
+        GameObject[] targets = GameObject.FindGameObjectsWithTag("Target");
+        for (int i = 0; i < targets.Length; i++)
+        {
+            TargetMovement targetMovement = targets[i].GetComponent<TargetMovement>();
+            Rigidbody targetRigidBody = targets[i].GetComponent<Rigidbody>();
+            Collider targetCollider = targets[i].GetComponent<Collider>();
+            targetMovement.enabled = false;
+            targetRigidBody.isKinematic = false;
+            targetCollider.enabled = false;
+            Destroy(targets[i], 1f);
         }
     }
 

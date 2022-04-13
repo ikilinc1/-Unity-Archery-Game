@@ -29,11 +29,14 @@ public class TargetMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float theta = Time.timeSinceLevelLoad / timePeriod;
-        float distance = Mathf.Sin(theta) * amplitude;
+        if (GameManager.gameStarted)
+        {
+            float theta = Time.timeSinceLevelLoad / timePeriod;
+            float distance = Mathf.Sin(theta) * amplitude;
 
-        Vector3 deltaPosition = new Vector3(0, 0, distance);
+            Vector3 deltaPosition = new Vector3(0, 0, distance);
         
-        transform.position = startPosition + deltaPosition;
+            transform.position = startPosition + deltaPosition;
+        }
     }
 }

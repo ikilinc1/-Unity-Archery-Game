@@ -69,18 +69,18 @@ public class GameManager : MonoBehaviour
         gameStarted = true;
         gameStateTextAnim.SetBool("ShowText", false);
     }
-
+    
+    private void UpdateScoreBoard()
+    {
+        scoreText.text =  "Targets:" + score;
+        timerText.text =  "Timer:" + Mathf.RoundToInt(timer);
+    }
+    
     private void EndGame()
     {
         gameStateText.text = "Game Over!\nPress Space to restart";
         gameStateTextAnim.SetBool("ShowText", true);
         gameStarted = false;
         timer = gameLengthInSeconds;
-    }
-
-    private void UpdateScoreBoard()
-    {
-        scoreText.text = score + " Targets";
-        timerText.text = Mathf.RoundToInt(timer) + " Seconds";
     }
 }

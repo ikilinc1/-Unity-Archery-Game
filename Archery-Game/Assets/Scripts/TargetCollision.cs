@@ -18,6 +18,7 @@ public class TargetCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Arrow"))
         {
+            GameManager.score++;
             targetMovement.enabled = false;
             collision.transform.parent = transform;
             collision.gameObject.GetComponent<Rigidbody>().isKinematic = true;
