@@ -48,6 +48,7 @@ public class ShootArrows : MonoBehaviour
         else if (!GameManager.gameStarted)
         {
             bowAnimator.SetBool("drawing", false);
+            currentArrowForce = 0;
         }
     }
 
@@ -58,15 +59,18 @@ public class ShootArrows : MonoBehaviour
 
     private void PowerUpBow()
     {
-        currentLerpTime += Time.deltaTime;
-
-        if (currentLerpTime > maxLerpTime)
+        if (bowAnimator.GetBool("drawing"))
         {
-            currentLerpTime = maxLerpTime;
-        }
+            currentLerpTime += Time.deltaTime;
 
-        float perc = currentLerpTime / maxLerpTime;
-        currentArrowForce = Mathf.Lerp(0, maximumArrowForce, perc);
+            if (currentLerpTime > maxLerpTime)
+            {
+                currentLerpTime = maxLerpTime;
+            }
+
+            float perc = currentLerpTime / maxLerpTime;
+            currentArrowForce = Mathf.Lerp(0, maximumArrowForce, perc);
+        }
     }
 
     private void ReleaseBow()
