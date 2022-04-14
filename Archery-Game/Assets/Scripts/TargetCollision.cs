@@ -8,18 +8,24 @@ public class TargetCollision : MonoBehaviour
     [SerializeField] 
     private TargetMovement targetMovement;
 
-    [SerializeField] private GameObject impactParticles;
+    [SerializeField] 
+    private GameObject impactParticles;
+    
+    private AudioSource impactSound;
     
     // Start is called before the first frame update
     void Start()
     {
         targetMovement = GetComponent<TargetMovement>();
+        impactSound = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Arrow"))
         {
+            impactSound.volume = collision.relativeVelocity.normalized.magnitude;
+            impactSound.Play();
             Instantiate(impactParticles, transform.position, impactParticles.transform.rotation);
             GameManager.score++;
             targetMovement.enabled = false;

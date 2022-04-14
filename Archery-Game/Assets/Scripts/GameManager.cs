@@ -17,6 +17,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject gameStateUI;
 
+    [SerializeField]
+    private AudioClip gameStartClip;
+    
+    [SerializeField]
+    private AudioClip gameEndClip;
+
+    private AudioSource gameStateSound;
+
     private float timer;
     private Text gameStateText;
     private Animator gameStateTextAnim;
@@ -32,6 +40,8 @@ public class GameManager : MonoBehaviour
 
         gameStateTextAnim = gameStateUI.GetComponent<Animator>();
         gameStateTextAnim.SetBool("ShowText", true);
+
+        gameStateSound = GetComponent<AudioSource>();
 
         timer = gameLengthInSeconds;
         
@@ -68,6 +78,9 @@ public class GameManager : MonoBehaviour
         score = 0;
         gameStarted = true;
         gameStateTextAnim.SetBool("ShowText", false);
+
+        gameStateSound.clip = gameStartClip;
+        gameStateSound.Play();
     }
     
     private void UpdateScoreBoard()
@@ -82,5 +95,8 @@ public class GameManager : MonoBehaviour
         gameStateTextAnim.SetBool("ShowText", true);
         gameStarted = false;
         timer = gameLengthInSeconds;
+        
+        gameStateSound.clip = gameEndClip;
+        gameStateSound.Play();
     }
 }

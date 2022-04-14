@@ -12,6 +12,8 @@ public class ShootArrows : MonoBehaviour
 
     [SerializeField]
     private float maximumArrowForce = 200f;
+
+    private AudioSource bowStretchSound;
     private float currentArrowForce;
     
     private float maxLerpTime = 1f;
@@ -23,6 +25,7 @@ public class ShootArrows : MonoBehaviour
     void Start()
     {
         bowAnimator = GetComponent<Animator>();
+        bowStretchSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,12 +52,14 @@ public class ShootArrows : MonoBehaviour
         {
             bowAnimator.SetBool("drawing", false);
             currentArrowForce = 0;
+            bowStretchSound.Stop();
         }
     }
 
     private void DrawBow()
     {
         bowAnimator.SetBool("drawing", true);
+        bowStretchSound.Play();
     }
 
     private void PowerUpBow()
@@ -82,5 +87,7 @@ public class ShootArrows : MonoBehaviour
 
         currentLerpTime = 0;
         currentArrowForce = 0;
+        
+        bowStretchSound.Stop();
     }
 }
