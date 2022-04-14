@@ -11,4 +11,3 @@ Used Packages
 Unity version-->2020.3.26f1  
 Current proggress --> Finished. 
 
-post Proccessing 3.2.1  
