@@ -375,7 +375,7 @@ AudioSource:
   m_GameObject: {fileID: 625972555}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2635175033595380257, guid: b3e0d4e79444a944fb34b10980419057, type: 2}
   m_audioClip: {fileID: 8300000, guid: d25ad38affd71cb439bfaaa49854dd38, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
@@ -646,7 +646,7 @@ AudioSource:
   m_GameObject: {fileID: 958864454}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -867742165317039818, guid: b3e0d4e79444a944fb34b10980419057, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1126,7 +1126,7 @@ AudioSource:
   m_GameObject: {fileID: 1230778243}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6423321635900898952, guid: b3e0d4e79444a944fb34b10980419057, type: 2}
   m_audioClip: {fileID: 8300000, guid: 425a8cd317f67a84583120c959590c3e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1454,7 +1454,7 @@ AudioSource:
   m_GameObject: {fileID: 1603383662}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5680297598236722639, guid: b3e0d4e79444a944fb34b10980419057, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3302aaff7330a4144b79f6d346b656ca, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.15
@@ -1581,7 +1581,7 @@ AudioSource:
   m_GameObject: {fileID: 1635374048}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5680297598236722639, guid: b3e0d4e79444a944fb34b10980419057, type: 2}
   m_audioClip: {fileID: 8300000, guid: a75e5f05af118ea488249d6fc66d7e3c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
@@ -1961,7 +1961,7 @@ AudioSource:
   m_GameObject: {fileID: 2098892036}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5680297598236722639, guid: b3e0d4e79444a944fb34b10980419057, type: 2}
   m_audioClip: {fileID: 8300000, guid: d1adb8cc67d9c6d48a65f7354fc48817, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4

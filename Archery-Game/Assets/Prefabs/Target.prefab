@@ -130,7 +130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetMovement: {fileID: 3296871108153894505}
   impactParticles: {fileID: 147558, guid: 8022586ff5272d3479f16c35d5abea75, type: 3}
-  impactSound: {fileID: 991589352722963342}
 --- !u!114 &3296871108153894505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +154,7 @@ AudioSource:
   m_GameObject: {fileID: 1628356709344694}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1114583368849419113, guid: b3e0d4e79444a944fb34b10980419057, type: 2}
   m_audioClip: {fileID: 8300000, guid: d473534d3a131da47bbd7704241959b0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
