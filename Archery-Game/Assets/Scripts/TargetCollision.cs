@@ -7,6 +7,8 @@ public class TargetCollision : MonoBehaviour
 {
     [SerializeField] 
     private TargetMovement targetMovement;
+
+    [SerializeField] private GameObject impactParticles;
     
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class TargetCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Arrow"))
         {
+            Instantiate(impactParticles, transform.position, impactParticles.transform.rotation);
             GameManager.score++;
             targetMovement.enabled = false;
             collision.transform.parent = transform;
